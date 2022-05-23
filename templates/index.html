@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+
+{% block body%}
+
+
+
+<div class="banner">
+    <h1>Lesion Identifier</h1>
+</div>   
+<div class="testbox">
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="file_photo">{{t}}</label>
+        <input type="file" name="file" id="file" multiple accept="image/jpeg image/jpg"><br>
+        <input type="submit" value="Upload">
+    </form>
+</div>
+<div class="testbox">
+    <ol>
+        <li>{{v.index[0]}}: {{v[0]}}</li>
+        <li>{{v.index[1]}}: {{v[1]}}</li>
+        <li>{{v.index[2]}}: {{v[2]}}</li>
+        <li>{{v.index[3]}}: {{v[3]}}</li>
+        <li>{{v.index[4]}}: {{v[4]}}</li>
+        <li>{{v.index[5]}}: {{v[5]}}</li>
+        <li>{{v.index[6]}}: {{v[6]}}</li>
+    </ol>
+</div>
+  
+
+
+{% endblock %}
