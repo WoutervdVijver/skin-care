@@ -1,3 +1,6 @@
 /data/**
 /classes/**
 /sampled_classes/**
+/folder_creator.ipynb
+/model_creator.ipynb
+/mobile.ipynb

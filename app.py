@@ -65,7 +65,7 @@ def index():
             im = keras.preprocessing.image_dataset_from_directory('./uploads', image_size=(224, 224))
             ser_1 =series_creator(np.round(model.predict(im)*100).ravel())
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            
+
             return render_template('index.html', v = ser_1.sort_values(ascending=False))
         return render_template('index.html', v=ser_0, t = 'Please upload a picture in .jpg format')
 
@@ -76,4 +76,4 @@ if __name__ == "__main__":
     # Threaded option to enable multiple instances for
     # multiple user access support
     # You will also define the host to "0.0.0.0" because localhost will only be reachable from inside de server.
-    app.run(debug=True, host="0.0.0.0", threaded=True, port=port)
+    app.run( host="0.0.0.0", threaded=True, port=port)
