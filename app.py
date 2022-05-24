@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.secret_key = 'wb'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-model = keras.models.load_model('./models/model')
+model = keras.models.load_model('./models/alexnet_small.h5')
 
 
 cls_long = [
@@ -45,22 +45,27 @@ ser_0 = series_creator([0,0,0,0,0,0,0])
 def index():
     if request.method == 'GET':
         return render_template('index.html', v=ser_0, t='Upload your picture')
+
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
             return render_template('index.html', v=ser_0, t = 'No file was found. Please upload a picture')
+
         file = request.files['file']
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
             flash('No selected file')
             return render_template('index.html', v=ser_0, t = 'No file was found. Please upload a picture')
+
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            im = keras.preprocessing.image_dataset_from_directory('./uploads', image_size=(180, 180))
+
+            im = keras.preprocessing.image_dataset_from_directory('./uploads', image_size=(224, 224))
             ser_1 =series_creator(np.round(model.predict(im)*100).ravel())
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            
             return render_template('index.html', v = ser_1.sort_values(ascending=False))
         return render_template('index.html', v=ser_0, t = 'Please upload a picture in .jpg format')
 
