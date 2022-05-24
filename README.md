@@ -17,3 +17,6 @@ This repository also contains two notebooks. These notebooks were used to create
 The notebooks expect the [HMNIST dataset](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000?select=HAM10000_metadata.csv), downloaded inside a folder called data. The folder_creator.ipynb notebook will create new directories from this data based on the type of lesion and wether it shoudl go in the train, test or validation set.
 The model_creator.ipynb is where the model is trained.
 
+## Usage
+
+You can upload a .jpg file. Then it will give a number of predictions in the form of percentages for each of the seven types of lesion.
