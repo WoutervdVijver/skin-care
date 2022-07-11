@@ -1,5 +1,7 @@
 # skin-care
 
+Discern the type of cancer from an image of a mole
+
 ## Description
 In this project I was tasked with creating a neural network that can identify images of skin lesions in 7 classes and with deploying this model.  This project was based on [This Kaggle Challenge](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000?select=HAM10000_metadata.csv). The neural net is inspired on the [AlexNet](https://dl.acm.org/doi/10.1145/3065386) architecture. I had about 10 days to finish this project.
 
