@@ -1,5 +1,4 @@
 # skin-care
-
 Discern the type of cancer from an image of a mole
 
 ## Description
