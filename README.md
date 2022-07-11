@@ -29,9 +29,9 @@ The seven classes of moles were highly unblanced. To account for this all classe
 ### Evaluation
 
 The model was tested on the set aside test set. Keep in mind that this test set is untouched but therefore unbalanced. The chance that the model's prediction is correct is about 78%. Keep in mind that the main contributor to this score is the majority class with 96%. The chance that a model with predicted A falls in class B can be found in the following confusion matrix:
-![scores](img/conf_pred.jpg)
+![scores](img/conf_pred.png)
 
 Additionally we mention that the chance that a mole of certain class ends up being classified correctly is about 64%.
 
-![scores_true](img/conf_pred.jpg)
+![scores_true](img/conf_true.png)
 
